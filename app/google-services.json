@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "948483628546",
+    "project_id": "youtubemp3downloader-150806"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948483628546:android:23425746fe29e318",
+        "android_client_info": {
+          "package_name": "com.example.asif.youtubemp3downloader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948483628546-8p257q7t7em3hifv249bmkm7110gaf10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asif.youtubemp3downloader",
+            "certificate_hash": "5F4041072DB8F9ECEAADC856226D286945AC0ED2"
+          }
+        },
+        {
+          "client_id": "948483628546-hbt0111vdlvvcguog90l08lj72h7s74e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgOm0wer2ffJ02gp3Jp3um1QcrZofRN88"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
