@@ -1,10 +1,7 @@
-package com.example.asif.youtubemp3downloader;
+package com.asifbuetme.youtubemp3mp4downloader;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.content.LocalBroadcastManager;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -25,6 +22,7 @@ import javax.net.ssl.HttpsURLConnection;
 class GetResponseFromInternet extends AsyncTask<String, Integer, String> {
 
     public HttpsURLConnection client;
+    InputStream inputStream;
     public Map<String, List<String>> responseHeaderList;
     public String response;
     private Context context;
@@ -69,7 +67,6 @@ class GetResponseFromInternet extends AsyncTask<String, Integer, String> {
             client = (HttpsURLConnection) url.openConnection();
             if (method.equals("GET")) {
                 client.setRequestMethod(method);
-                //client.setRequestProperty("Host", uri[0].substring(uri[0].indexOf("//"), uri[0].indexOf("/", 9)));
                 client.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 client.setRequestProperty("accept-language", "en-US,en;q=0.8,bn;q=0.6,zh-CN;q=0.4,zh;q=0.2");
                 client.setRequestProperty("user-agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36");
@@ -79,7 +76,7 @@ class GetResponseFromInternet extends AsyncTask<String, Integer, String> {
 
                 responseHeaderList = client.getHeaderFields();
 
-                InputStream inputStream = client.getInputStream();
+                inputStream = client.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
                 StringBuilder stringBuilder = new StringBuilder();
                 String line;
@@ -113,7 +110,7 @@ class GetResponseFromInternet extends AsyncTask<String, Integer, String> {
                 outputStream.close();
 
                 if (client.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                    InputStream inputStream = client.getInputStream();
+                    inputStream = client.getInputStream();
                     BufferedReader reader = new BufferedReader(
                             new InputStreamReader(inputStream));
                     StringBuilder stringBuilder = new StringBuilder();
@@ -136,7 +133,7 @@ class GetResponseFromInternet extends AsyncTask<String, Integer, String> {
                 client.setReadTimeout(timeout);
                 client.connect();
 
-                InputStream inputStream = client.getInputStream();
+                inputStream = client.getInputStream();
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(inputStream));
                 StringBuilder stringBuilder = new StringBuilder();

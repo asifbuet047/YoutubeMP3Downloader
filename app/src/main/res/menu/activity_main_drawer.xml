@@ -3,40 +3,51 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/created_playlist"
-            android:icon="@drawable/ic_playlist_add_black_24dp"
-            android:title="Created Playlists" />
-        <item
-            android:id="@+id/favourites_playlist"
-            android:icon="@drawable/ic_favorite_black_24dp"
-            android:title="Favourite Playlist" />
-        <item
-            android:id="@+id/uploaded_playlist"
-            android:icon="@drawable/ic_file_upload_black_24dp"
-            android:title="Uploaded Playlist " />
-        <item
-            android:id="@+id/liked_playlist"
-            android:icon="@drawable/ic_thumb_up_black_24dp"
-            android:title="Liked Playlist" />
+            android:id="@+id/playlist"
+            android:title="Your Playlists">
+            <menu>
+                <item
+                    android:id="@+id/created_playlist"
+                    android:icon="@drawable/ic_playlist_add_black_24dp"
+                    android:title="Created Playlists" />
+                <item
+                    android:id="@+id/favourites_playlist"
+                    android:icon="@drawable/ic_favorite_black_24dp"
+                    android:title="Favourite Playlist" />
+                <item
+                    android:id="@+id/uploaded_playlist"
+                    android:icon="@drawable/ic_info_black_24dp"
+                    android:title="Uploaded Playlist " />
+                <item
+                    android:id="@+id/liked_playlist"
+                    android:icon="@drawable/ic_thumb_up_black_24dp"
+                    android:title="Liked Playlist" />
+            </menu>
+
+        </item>
+
     </group>
 
-    <item
-        android:id="@+id/signing"
-        android:title="Signing and Settings">
-        <menu>
-            <item
-                android:id="@+id/settings"
-                android:icon="@drawable/ic_settings_black_24dp"
-                android:title="Settings" />
-            <item
-                android:id="@+id/sign_in"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Sign In" />
-            <item
-                android:id="@+id/sign_different"
-                android:icon="@drawable/ic_people_black_24dp"
-                android:title="Signing in into another account" />
-        </menu>
-    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/signing"
+            android:title="Signing and Settings">
+            <menu>
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="Settings" />
+                <item
+                    android:id="@+id/sign_in"
+                    android:icon="@drawable/ic_people_black_24dp"
+                    android:title="Sign In" />
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/ic_info_black_24dp"
+                    android:title="About" />
+            </menu>
+        </item>
+    </group>
+
 
 </menu>

@@ -17,17 +17,19 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
+            android:layout_height="@dimen/toolbar_size"
+            android:addStatesFromChildren="true"
+            android:background="@color/primary_dark"
+            app:titleTextColor="@color/materialcolorpicker__black" />
 
         <LinearLayout
             android:id="@+id/content_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingTop="?attr/actionBarSize">
+
 
             <TextView
                 android:id="@+id/textView"
@@ -38,32 +40,38 @@
                 android:text="Hello Youtube!!!"
                 android:textStyle="normal|bold" />
 
+
+            <ImageView
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Search_Icon"
+                app:srcCompat="@drawable/ic_loading" />
+
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
+                android:background="@color/materialcolorpicker__lightgrey"
+                android:clipChildren="false"
                 android:scrollbars="vertical" />
 
 
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@drawable/ic_file_download_black_24dp" />
 
     </android.support.design.widget.CoordinatorLayout>
 
+
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/naviration_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="false"
+        android:background="@color/materialcolorpicker__lightgrey"
         app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/primary_text"
         app:menu="@menu/activity_main_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

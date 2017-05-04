@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.asif.youtubemp3downloader">
+    package="com.asifbuetme.youtubemp3mp4downloader">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        android:label="@string/app_name">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/MyDarkTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyDarkTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".WelcomeScreenActivity"
+            android:theme="@style/MyDarkTheme" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/MyDarkTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,39 +38,43 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <activity android:name=".YoutubeFavouriteVideos" />
-
-        <service
-            android:name=".YoutubeAudioDownloaderService"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity android:name=".YoutubePlaylistActivity" />
-        <activity android:name=".YoutubePlaylistVideoActivity" />
-
-        <receiver
-            android:name=".YoutubeDownloaderBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity android:name=".AnimationActivity" />
-
-        <service
-            android:name=".GetUserYoutubePlaylists"
-            android:enabled="true"
-            android:exported="true" />
-        <service
-            android:name=".GetYoutubePlaylistVideos"
-            android:enabled="true"
-            android:exported="true" />
         <service
             android:name=".DownloadYoutubeAudioByDownloadManager"
-            android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
+        <service
+            android:name=".MyJobSchedulerService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".GetUserYoutubePlaylistsByIntentService"
+            android:exported="false" />
+        <service
+            android:name=".GetYoutubePlaylistVideosByIntentService"
+            android:exported="false" />
+        <service
+            android:name=".GenerateYoutubeVideoDownloadLink"
+            android:exported="false" />
+        <service
+            android:name=".DownloadYoutubeAudioOrVideoAfterComfirmation"
+            android:exported="false" />
+        <service
+            android:name=".GenerateYoutubeAudioDownloadLink"
+            android:exported="false" />
+        <service
+            android:name=".GetYoutubeSearchResultByIntentService"
+            android:exported="false" />
+        <service
+            android:name=".GenerateYoutubeVideoDownloadLinkCustomSettings"
+            android:exported="false" />
+        <service
+            android:name=".GetYoutubeMostPopularVideosByIntentService"
+            android:exported="false" />
+        <service
+            android:name=".GetYoutubeVideoDownloadLinkOfPreferResolutionByGoogle"
+            android:exported="false" />
+        <service
+            android:name=".MuxingAudioVideoInSeperateThred"
+            android:exported="false"></service>
     </application>
 
 </manifest>
