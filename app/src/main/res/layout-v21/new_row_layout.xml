@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:id="@+id/each_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <ImageView
+            android:id="@+id/data_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/data_title"
+            android:layout_margin="3dp"
+            android:adjustViewBounds="false"
+            android:fitsSystemWindows="false"
+            android:foregroundGravity="center"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_search_black_24dp" />
+
+        <TextView
+            android:id="@+id/data_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:text="Title"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/data_channelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/data_title"
+            android:layout_margin="3dp"
+            android:layout_toEndOf="@+id/data_thumbnail"
+            android:layout_toRightOf="@+id/data_thumbnail"
+            android:gravity="left"
+            android:text="ChannelTitle"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/duration"
+            android:layout_margin="3dp"
+            android:layout_toEndOf="@+id/data_thumbnail"
+            android:layout_toRightOf="@+id/data_thumbnail"
+            android:gravity="left|center"
+            android:text="Published:" />
+
+        <TextView
+            android:id="@+id/data_publishedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="3dp"
+            android:layout_toRightOf="@+id/publish"
+            android:gravity="center"
+            android:text="TextView"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/data_channelTitle"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@+id/data_publishedAt"
+            android:layout_toRightOf="@+id/data_thumbnail"
+            android:layout_toStartOf="@+id/data_publishedAt"
+            android:gravity="left"
+            android:text="Duration:" />
+
+        <TextView
+            android:id="@+id/data_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/duration"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_toRightOf="@+id/duration"
+            android:gravity="center"
+            android:text="duration"
+            android:textStyle="italic" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/publish"
+            android:layout_toRightOf="@+id/data_thumbnail"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

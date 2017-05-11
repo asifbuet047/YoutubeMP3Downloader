@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="general_catagory"
+        android:selectable="false"
+        android:title="General">
+        <CheckBoxPreference
+            android:background="@drawable/rounded_background"
+            android:defaultValue="false"
+            android:icon="@drawable/ic_network_wifi_black_24dp"
+            android:key="wifi_only"
+            android:persistent="true"
+            android:summary="Check the box to allow download in wifi only"
+            android:title="Download Preference" />
+        <ListPreference
+            android:defaultValue="@string/default_catagory"
+            android:entries="@array/list_youtube_catagories"
+            android:entryValues="@array/list_youtube_catagories_id"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:key="video_catagories"
+            android:persistent="true"
+            android:title="Prefer Category" />
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:capitalize="sentences"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_favorite_black_24dp"
+            android:key="prefer_list"
+            android:persistent="true"
+            android:summary="If set prefer category list will be loaded or Your save playlist"
+            android:textColor="@color/primary_text"
+            android:title="Load prefer category" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="colors"
+        android:selectable="false"
+        android:title="Colors">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_color_lens_black_24dp"
+            android:key="navigation_color"
+            android:persistent="true"
+            android:summary="Set the Drawer color"
+            android:title="Navigation drawer color"
+            android:visibility="visible" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_color_lens_black_24dp"
+            android:key="toolbar_color"
+            android:persistent="true"
+            android:summary="Set the Toolbar color"
+            android:title="Toolbar color"
+            android:visibility="visible" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_dark_black_24dp"
+            android:key="theme"
+            android:persistent="true"
+            android:summary="Set the application theme"
+            android:title="Dark theme"
+            android:visibility="visible" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="storage_catagory"
+        android:selectable="false"
+        android:title="Storage">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_mp3"
+            android:key="custom_folder_audio"
+            android:persistent="true"
+            android:summary="Location: Music folder"
+            android:title="Audio Download Folder" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_mp4"
+            android:key="custom_folder_video"
+            android:persistent="true"
+            android:summary="Location: Movies folder"
+            android:title="Video Download Folder" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="quality_catagory"
+        android:selectable="false"
+        android:title="Media Quality">
+        <ListPreference
+            android:defaultValue="@string/default_audio_bitrate"
+            android:entries="@array/list_preference_bitrates_entries"
+            android:entryValues="@array/list_preference_bitrates_entries_values"
+            android:icon="@drawable/ic_audiotrack_black_24dp"
+            android:key="audio_bitrate"
+            android:persistent="true"
+            android:selectable="true"
+            android:summary="Select preferable bitrate"
+            android:title="Audio bitrate" />
+        <ListPreference
+            android:defaultValue="@string/default_video_resolution"
+            android:entries="@array/list_preference_resolution_entries"
+            android:entryValues="@array/list_preference_resolution_values"
+            android:icon="@drawable/ic_ondemand_video_black_24dp"
+            android:key="video_resolution"
+            android:persistent="true"
+            android:selectable="true"
+            android:summary="Select preferable resolution"
+            android:title="Video resolution" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
