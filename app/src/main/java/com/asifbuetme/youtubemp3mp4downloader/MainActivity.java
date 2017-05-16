@@ -73,24 +73,31 @@ import java.util.ArrayList;
 import javax.net.ssl.HttpsURLConnection;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 101;
     public static int REQUEST_CODE_PICK_ACCOUNT = 102;
     public static int REQUEST_CODE_AUTH = 101;
-    @BindView(R.id.textView) TextView textView;
+    @BindView(R.id.textView)
+    TextView textView;
+    @BindView(R.id.refresh)
     ImageView refresh;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+    @BindView(R.id.naviration_view)
+    NavigationView navigationView;
     SearchView youtube_search;
     SharedPreferences sharedPreferences;
     AlarmManager alarmManager;
     NotificationManager notificationManager;
     LocalBroadcastManager localBroadcastManager;
     MainBroadcastReceiver receiver;
-    DrawerLayout drawer;
-    Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView navigationView;
+
     RecyclerView recyclerView;
     ArrayList<Information> informations;
     RecyclerTouchListener recyclerTouchListener;
@@ -115,13 +122,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main_two);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
+        ButterKnife.bind(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.naviration_view);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerTouchListener = new RecyclerTouchListener(this, recyclerView, null);
-        refresh = (ImageView) findViewById(R.id.refresh);
         linearLayout = (LinearLayout) findViewById(R.id.content_main);
         mainActivity = this;
 
