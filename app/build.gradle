@@ -5,7 +5,7 @@ android {
         debug {
             keyAlias 'youtubemp3'
             keyPassword '570996'
-            storeFile file('E:/Android/my_key.keystore')
+            storeFile file('E:/Android/Others/my_key.keystore')
             storePassword '570996'
         }
         release {
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services-auth:10.2.1'
+    compile 'com.google.android.gms:play-services-auth:10.2.4'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:design:25.3.1'
@@ -58,4 +58,6 @@ dependencies {
     compile 'com.turki-alkhateeb:materialcolorpicker:1.0.7'
     compile 'com.googlecode.mp4parser:isoparser:1.1.22'
     compile 'com.writingminds:FFmpegAndroid:0.3.2'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

@@ -72,12 +72,14 @@ import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import butterknife.BindView;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 101;
     public static int REQUEST_CODE_PICK_ACCOUNT = 102;
     public static int REQUEST_CODE_AUTH = 101;
-    TextView textView;
+    @BindView(R.id.textView) TextView textView;
     ImageView refresh;
     SearchView youtube_search;
     SharedPreferences sharedPreferences;
@@ -114,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
 
-        textView = (TextView) findViewById(R.id.textView);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.naviration_view);
