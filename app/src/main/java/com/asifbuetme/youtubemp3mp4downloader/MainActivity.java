@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 101;
     public static int REQUEST_CODE_PICK_ACCOUNT = 102;
     public static int REQUEST_CODE_AUTH = 101;
+    
     @BindView(R.id.textView)
     TextView textView;
     @BindView(R.id.refresh)
@@ -90,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawer;
     @BindView(R.id.naviration_view)
     NavigationView navigationView;
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
+
     SearchView youtube_search;
     SharedPreferences sharedPreferences;
     AlarmManager alarmManager;
@@ -98,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     MainBroadcastReceiver receiver;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
-    RecyclerView recyclerView;
     ArrayList<Information> informations;
     RecyclerTouchListener recyclerTouchListener;
     ObjectAnimator animator;
@@ -124,8 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         ButterKnife.bind(this);
 
-        navigationView = (NavigationView) findViewById(R.id.naviration_view);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerTouchListener = new RecyclerTouchListener(this, recyclerView, null);
         linearLayout = (LinearLayout) findViewById(R.id.content_main);
         mainActivity = this;
